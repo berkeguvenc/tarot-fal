@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String
+  phone        String
+  appointments Appointment[]
+  createdAt    DateTime      @default(now())
+}
+
+model Appointment {
+  id        String            @id @default(cuid())
+  userId    String
+  user      User              @relation(fields: [userId], references: [id])
+  date      DateTime          // Randevu günü (Örn: 2026-06-15)
+  slot      String            // Saat dilimi (Örn: "14:00")
+  status    AppointmentStatus @default(PENDING)
+  notes     String?
+  createdAt DateTime          @default(now())
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
