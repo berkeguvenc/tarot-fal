@@ -1,7 +1,19 @@
 import { PrismaClient } from "@prisma/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+// Veritabanı bağlantı URL'ini alıyoruz
+const connectionString = process.env.DATABASE_URL;
 
 const prismaClientSingleton = () => {
-    return new PrismaClient();
+    // 1. Yeni bir bağlantı havuzu (pool) oluştur
+    const pool = new Pool({ connectionString });
+
+    // 2. Prisma için Postgres adaptörünü kur
+    const adapter = new PrismaPg(pool);
+
+    // 3. Prisma'yı adaptör ile başlat
+    return new PrismaClient({ adapter });
 };
 
 declare global {
