@@ -20,7 +20,12 @@ model Appointment {
   customerPhone String
   notes         String?         // Kullanıcının bıraktığı özel not
   
-  // Servis Türü (Örn: "Tarot Falı" veya "Kedi Konaklama")
+  // Astroloji ve Detaylı Fal Bilgileri
+  birthDate     DateTime?       // Doğum tarihi
+  birthTime     String?         // Doğum saati (Örn: "14:30" veya "Bilinmiyor")
+  birthPlace    String?         // Doğum yeri (Örn: "İstanbul / Kadıköy")
+
+  // Servis Türü (Örn: "Tarot Falı", "Astroloji Haritası")
   serviceType   String          
   
   status      AppointmentStatus @default(PENDING)
@@ -40,3 +45,36 @@ enum AppointmentStatus {
   CANCELLED  // İptal edildi
   COMPLETED  // Tamamlandı
 }
+
+// ----------------------------------------------------------------------
+// GELECEKTEKİ EĞİTİM VE E-TİCARET SİSTEMİ İÇİN ŞEMA TASLAKLARI
+// ----------------------------------------------------------------------
+
+// model Course {
+//   id          String         @id @default(cuid())
+//   title       String
+//   description String
+//   price       Float
+//   modules     CourseModule[]
+//   createdAt   DateTime       @default(now())
+//   updatedAt   DateTime       @updatedAt
+// }
+
+// model CourseModule {
+//   id          String   @id @default(cuid())
+//   title       String
+//   content     String   // Video URL veya metin
+//   courseId    String
+//   course      Course   @relation(fields: [courseId], references: [id])
+//   order       Int      // Modülün sırası
+// }
+
+// model Product {
+//   id          String   @id @default(cuid())
+//   name        String   // Örn: "Tarot Rehberi Kitabı"
+//   description String
+//   price       Float
+//   stock       Int
+//   createdAt   DateTime @default(now())
+//   updatedAt   DateTime @updatedAt
+// }

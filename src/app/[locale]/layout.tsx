@@ -1,26 +1,37 @@
 import "@/app/globals.css";
 import { ReactNode } from "react";
 import { i18nConfig } from "../../../i18nConfig";
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-// 1. Fonksiyonu async yapıyoruz
 export default async function RootLayout({
   children,
   params
 }: {
   children: ReactNode;
-  // 2. params'ı Promise olarak tanımlıyoruz
   params: Promise<{ locale: string }>;
 }) {
-  // 3. locale bilgisini await ile alıyoruz
   const { locale } = await params;
 
+  // Mistik atmosfer için varsayılan karanlık tema (dark) ve özel fontlar
   return (
-    <html lang={locale}>
-      <body>{children}</body>
+    <html lang={locale} className={`dark ${playfair.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

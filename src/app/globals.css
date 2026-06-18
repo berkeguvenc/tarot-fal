@@ -6,6 +6,9 @@
 
 /* Tailwind v4 Tema Yapılandırması (Eski tailwind.config.ts'in yerine geçer) */
 @theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -52,25 +55,26 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Tarot & Fal için mistik karanlık tema (gece mavisi ve koyu mor ağırlıklı) */
+    --background: 265 50% 6%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 265 40% 9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 265 40% 9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 275 80% 65%; /* Daha parlak bir mistik mor/altın karışımı için */
     --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 265 30% 15%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 265 30% 15%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 90% 65%; /* Altın Sarısı (Gold) vurgular için */
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 265 30% 18%;
+    --input: 265 30% 18%;
+    --ring: 275 80% 65%;
   }
 }
 
