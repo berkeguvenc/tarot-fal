@@ -92,7 +92,7 @@ export default async function LandingPage({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 animate-in fade-in duration-500">
             <h2 className="text-3xl font-extrabold text-foreground tracking-tight sm:text-4xl font-serif">
-              {t("services_title") || "Mistik Hizmetlerimiz"}
+              {t("services_title")}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground font-medium">
               Geleceğinizi aydınlatacak ve size rehberlik edecek fal türlerimiz.

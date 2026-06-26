@@ -1,5 +1,6 @@
 {
   "locale": "tr",
+  "services_title": "Mistik Hizmetlerimiz",
   "metadata_title": "Mistik Tarot & Astroloji | Online Randevu",
   "metadata_description": "Tarot açılımı, kahve falı ve detaylı astroloji haritası yorumları için online randevunuzu kolayca oluşturun.",
   "nav_services": "Hizmetlerimiz",
@@ -26,8 +27,8 @@
   "booking_title": "Mistik Randevunuzu Planlayın",
   "booking_subtitle": "Birkaç adımda randevunuzu oluşturun, kartların ve gökyüzünün fısıltılarına kulak verin.",
   "step_1": "Tarih ve Saat",
-  "step_2": "Hizmet & Detaylar",
-  "step_3": "İletişim & Onay",
+  "step_2": "Hizmet ve Detaylar",
+  "step_3": "İletişim ve Onay",
   "label_owner_name": "Adınız Soyadınız",
   "placeholder_owner_name": "Örn: Ahmet Yılmaz",
   "label_owner_email": "E-posta Adresiniz",
