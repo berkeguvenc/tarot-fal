@@ -12,17 +12,23 @@ async function main() {
     // Eski verileri temizle
     await prisma.timeSlot.deleteMany();
 
-    // Test için örnek saat dilimleri ekle
+    // Mistik seanslar için örnek çalışma saatleri (10:00 - 21:00)
     await prisma.timeSlot.createMany({
         data: [
-            { startTime: "09:00", endTime: "10:00", isAvailable: true },
             { startTime: "10:00", endTime: "11:00", isAvailable: true },
-            { startTime: "11:00", endTime: "12:00", isAvailable: false }, // Dolu slot testi için
+            { startTime: "11:00", endTime: "12:00", isAvailable: true },
+            { startTime: "13:00", endTime: "14:00", isAvailable: true },
             { startTime: "14:00", endTime: "15:00", isAvailable: true },
+            { startTime: "15:00", endTime: "16:00", isAvailable: true },
+            { startTime: "16:00", endTime: "17:00", isAvailable: true },
+            { startTime: "17:00", endTime: "18:00", isAvailable: true },
+            { startTime: "18:00", endTime: "19:00", isAvailable: true },
+            { startTime: "19:00", endTime: "20:00", isAvailable: true },
+            { startTime: "20:00", endTime: "21:00", isAvailable: true },
         ],
     });
 
-    console.log("🌱 Test saat dilimleri veritabanına başarıyla yüklendi!");
+    console.log("🌱 Mistik seans saat dilimleri veritabanına başarıyla yüklendi!");
 }
 
 main()
